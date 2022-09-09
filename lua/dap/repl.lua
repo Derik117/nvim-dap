@@ -153,7 +153,7 @@ local function evaluate_handler(err, resp)
       tree.render(layer, resp)
     end
   else
-    local lines = vim.split(resp.result, '\n', { trimempty = true })
+    local lines = vim.split(resp.result or 'None', '\n', { trimempty = true })
     layer.render(lines)
   end
 end
